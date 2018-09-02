@@ -1,13 +1,8 @@
-const { take, size, replace, dropFirst, split, chunks, toUpper } = require('../utils/string');
-const ibanCountries = require('../conf/ibanCountries');
+const { take, size, dropFirst, split, chunks, sanitize } = require('../../utils/string');
+const ibanCountries = require('../../conf/ibanCountries');
 
 const ALPHABET = split('ABCDEFGHIJKLMNOPQRSTUVWXYZ', '');
 const MODULO_BASE = 97;
-
-
-const sanitize = (rawIban) => {
-  return toUpper(replace(String(rawIban), /[\s\-\_]*/g, ''));
-};
 
 const getIbanCountryCode = (iban = '') => {
   return take(iban, 2);

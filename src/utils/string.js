@@ -57,6 +57,11 @@ const chunks = (str, n) => {
     : parts;
 };
 
+const sanitize = (rawIban) => {
+  if (!rawIban) return null;
+  return toUpper(replace(String(rawIban), /[\s\-\_]*/g, ''));
+};
+
 module.exports = {
   isString,
   toUpper,
@@ -67,4 +72,5 @@ module.exports = {
   dropFirst,
   chunks,
   size,
+  sanitize,
 };

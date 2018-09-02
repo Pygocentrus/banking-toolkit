@@ -1,35 +1,10 @@
 const iban = require('./src/modules/iban');
+const sortCode = require('./src/modules/sortCode');
 
-console.info('Correct IBANs:');
-const correctIbans = [
-  'FR7630001007941234567890185',
-  'FR7630004000031234567890143',
-  'FR7630006000011234567890189',
-  'FR7610107001011234567890129',
-  'FR7611315000011234567890138',
-  'FR7630002032531234567890168',
-  'FR7630056009271234567890182',
-  'FR7611808009101234567890147',
-  'FR7610011000201234567890188',
-  'FR7630076020821234567890186',
-  'FR7614410000011234567890163',
-  'FR7612548029981234567890161',
-  'FR7630007000111234567890144',
-  'FR7642559000011234567890121',
-  'FR7641199110541234567890180',
-  'DE12500105170648489890',
-  'IE92BOFI90001710027952',
-  'GB87 BARC 2065 8244 9716 55',
-  'GB32ESSE40486562136016',
-  'BE43068999999501',
-  'NO5015032080119',
-  'IT68D0300203280000400162854',
-  'MC1112739000700011111000H79',
-];
-correctIbans.forEach(i => console.info(`  Valid? ${iban.isValid(i)} - ${i}`));
+// sortCode.isValid({ accountNumber: '02355688', sortCode: '309070' });
+// sortCode.isValid({ accountNumber: '12345112', sortCode: '074456' });
+sortCode.isValid({ accountNumber: '46238510', sortCode: '871427' });
+// sortCode.isValid({ accountNumber: '63748472', sortCode: '202959' });
+// sortCode.isValid({ accountNumber: '66374958', sortCode: '089999' });
 
-console.info('Incorrect IBANs:');
-const incorrectIbans = [
-  'DE-3627  -fdbjf_BBB',
-];
-incorrectIbans.forEach(i => console.info(`  Valid? ${iban.isValid(i)} - ${i}`));
+// iban.isValid('FR7630001007941234567890185')

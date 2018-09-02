@@ -7,7 +7,13 @@ const has = (obj, key) => {
   return obj.hasOwnProperty(key);
 };
 
-module.export = {
+const get = (obj, key) => {
+  if (!isObject(obj) || !key || !has(obj, key)) return null;
+  return obj[key];
+};
+
+module.exports = {
   isObject,
   has,
+  get,
 };
